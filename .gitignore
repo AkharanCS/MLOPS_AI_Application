@@ -4,3 +4,4 @@ backend/enron_spam_data.csv
 venv/
 model_training/enron_spam_data.csv
 *.zip
+*.pkl
