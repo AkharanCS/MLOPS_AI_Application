@@ -70,8 +70,9 @@ def get_emails(mail_id = str, password = str):
         logger.exception(f"Unexpected error during email fetch: {e}")
     return None, [], []
 
-def move_to_spam(my_mail,mail_id_list):
 
+# Function to move emails to spam folder.
+def move_to_spam(my_mail,mail_id_list):
     try:
         my_mail.select('Inbox', readonly=False)
         for e_uid in mail_id_list:

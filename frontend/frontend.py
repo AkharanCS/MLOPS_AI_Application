@@ -6,8 +6,8 @@ import json
 
 from extract_email import get_emails,move_to_spam
 
-url_predict = "http://localhost:6000/predict"
-url_retrain = "http://localhost:6000/train"
+url_predict = "http://backend:6000/predict"
+url_retrain = "http://backend:6000/train"
 
 if "bodies" not in st.session_state:
     st.session_state.bodies = None
@@ -29,6 +29,8 @@ if "feedback_data" not in st.session_state:
     st.session_state.feedback_data = None
 if "feedback_labels" not in st.session_state:
     st.session_state.feedback_labels = None
+
+
 # ------------------- Page Config -------------------
 st.set_page_config(
     page_title="Spam Shield",
@@ -300,11 +302,12 @@ elif page == "User Manual":
     ## 📧 4. Integrating with Gmail
     1. Go to **Integrate with Gmail**.
     2. Enter Gmail **username** and **password**.
-    3. Click **Login** to fetch new unread mails from your inbox.
-    4. Click **Check for Spam** to scan emails.
-    5. Review predictions and give feedback if needed.
-    6. Move detected spam to your Spam folder.
-    7. Retrain the model with your feedback for better accuracy.
+    3. Password should be app password created after enabling 2-factor authentication.
+    4. Click **Login** to fetch new unread mails from your inbox.
+    5. Click **Check for Spam** to scan emails.
+    6. Review predictions and give feedback if needed.
+    7. Move detected spam to your Spam folder.
+    8. Retrain the model with your feedback for better accuracy.
 
     """, unsafe_allow_html=True)
 
@@ -314,7 +317,7 @@ elif page == "About":
     st.write("""
     - **App**: Spam Shield
     - **Made by**: C.S.Akharan (CH21B009)
-    - **GitHub**: [Link](https://github.com/yourprofile)
+    - **GitHub**: [Spam Shield Repository](https://github.com/AkharanCS/MLOPS_AI_Application)
     """)
 
 # ------------------- Footer -------------------
