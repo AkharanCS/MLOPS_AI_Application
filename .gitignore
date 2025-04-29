@@ -1,0 +1,6 @@
+__pycache__/
+mlruns/
+backend/enron_spam_data.csv
+venv/
+model_training/enron_spam_data.csv
+*.zip
